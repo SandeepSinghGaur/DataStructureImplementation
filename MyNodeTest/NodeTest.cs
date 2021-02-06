@@ -74,5 +74,23 @@ namespace MyNodeTest
             Assert.AreEqual(result,true);
 
         }
+        /// <summary>
+        /// Ability to delete the first  element in the LinkedList of sequence 56->30->70
+        /// </summary>
+        [Test]
+        public void given3FirstElementWhenDeletedShouldPassLinkedListResult()
+        {
+            MyNode<int> myFirstNode = new MyNode<int>(56);
+            MyNode<int> mySecondNode = new MyNode<int>(30);
+            MyNode<int> myThirdNode = new MyNode<int>(70);
+            MyLinkedList myLinkedList = new MyLinkedList();
+            myLinkedList.append((INode<int>)myFirstNode);
+            myLinkedList.append((INode<int>)mySecondNode);
+            myLinkedList.append((INode<int>)myThirdNode);
+            myLinkedList.pop();
+            bool result = myLinkedList.head.Equals(mySecondNode) &&
+                    myLinkedList.tail.Equals(myThirdNode);
+            Assert.AreEqual(result,result);
+        }
     }
 }

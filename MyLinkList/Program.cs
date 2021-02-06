@@ -9,7 +9,8 @@ namespace MyLinkList
             //Console.WriteLine("Welcome to The LinkList Using generic");
             //Console.WriteLine("Create Add Function Inside MyLInkedList Class");
             //Console.WriteLine("Ability to create Linked List by appending 30 and 70 to 56");
-            Console.WriteLine("Ability to Insert30 Between 56 and 70");
+            //Console.WriteLine("Ability to Insert30 Between 56 and 70");
+            Console.WriteLine("Ability to delete the first  element in the LinkedList of sequence 56->30->70");
         }
     }
 }

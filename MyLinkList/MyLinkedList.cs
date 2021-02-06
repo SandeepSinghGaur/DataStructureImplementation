@@ -58,5 +58,10 @@ namespace MyLinkList
             newNode.setNext(tempNode);
 
         }
+        public void pop()
+        {
+            INode<int> tempNode = this.head;
+            this.head = head.GetNext();
+        }
     }
 }

@@ -94,5 +94,31 @@ namespace MyLinkList
             tempNode = tempNode.GetNext();
             return tempNode;
         }
+        /// <summary>
+        /// Search the Given Node
+        /// </summary>
+        /// <param name="findNode"></param>
+        /// <returns></returns>
+        public bool searchNode(INode<int> findNode)
+        {
+            INode<int> tempNode = head;
+            while (tempNode != tail)
+            {
+                if (tempNode.GetKey() == findNode.GetKey())
+                {
+                    Console.WriteLine(findNode.GetKey());
+                    Console.WriteLine(" " + "is present in LinkList");
+                    return true;
+                }
+                tempNode = tempNode.GetNext();
+            }
+            if (tempNode.GetKey() == findNode.GetKey())
+            {
+                Console.WriteLine(findNode.GetKey());
+                Console.WriteLine(" " + "is present in LinkList");
+                return true;
+            }
+            return false;
+        }
     }
 }

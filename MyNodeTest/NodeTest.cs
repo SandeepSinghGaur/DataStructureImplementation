@@ -9,7 +9,7 @@ namespace MyNodeTest
         /// Test the Order of thr Node 56->30->70
         /// </summary>
         [Test]
-        public void given3NumbersWhenLinkedShouldPassToLinkedList()
+        public void Given3NumbersWhenLinkedShouldPassToLinkedList()
         {
             MyNode<int> myFirstNode = new MyNode<int>(56);
             MyNode<int> mySecondNode = new MyNode<int>(30);
@@ -26,7 +26,7 @@ namespace MyNodeTest
         /// - Finally 56 is added to 30
         /// </summary>
         [Test]
-        public void given3NumbersWhenAddedToLinkedListShouldAddedToTop()
+        public void Given3NumbersWhenAddedToLinkedListShouldAddedToTop()
         {
             MyNode<int> myFirstNode = new MyNode<int>(70);
             MyNode<int> MySecondNode = new MyNode<int>(30);
@@ -42,7 +42,7 @@ namespace MyNodeTest
         ///Ability to create Linked List by appending 30 and 70 to 56
         ///</summary>
         [Test]
-    public void given3NumbersWhenAppendedToLinkedListShouldAddedToLast()
+    public void Given3NumbersWhenAppendedToLinkedListShouldAddedToLast()
         {
             MyNode<int> myFirstNode = new MyNode<int>(56);
             MyNode<int> mySecondNode = new MyNode<int>(30);
@@ -59,7 +59,7 @@ namespace MyNodeTest
         /// Ability to Insert30 Between 56 and 70
         /// </summary>
         [Test]
-    public void given3NumbersWhenInsertingSecondInBetweenShouldPassLinkedListResult()
+    public void Given3NumbersWhenInsertingSecondInBetweenShouldPassLinkedListResult()
         {
             MyNode<int> myFirstNode = new MyNode<int>(56);
             MyNode<int> mySecondNode = new MyNode<int>(30);
@@ -78,7 +78,7 @@ namespace MyNodeTest
         /// Ability to delete the first  element in the LinkedList of sequence 56->30->70
         /// </summary>
         [Test]
-        public void given3FirstElementWhenDeletedShouldPassLinkedListResult()
+        public void Given3FirstElementWhenDeletedShouldPassLinkedListResult()
         {
             MyNode<int> myFirstNode = new MyNode<int>(56);
             MyNode<int> mySecondNode = new MyNode<int>(30);
@@ -96,7 +96,7 @@ namespace MyNodeTest
         /// Ability to delete the last  element in the LinkedList of sequence 56->30->70
         /// </summary>
         [Test]
-    public void givenLastElementWhenDeletedShouldPassLinkedListResult()
+    public void GivenLastElementWhenDeletedShouldPassLinkedListResult()
         {
             MyNode<int> myFirstNode = new MyNode<int>(56);
             MyNode<int> mySecondNode = new MyNode<int>(30);
@@ -110,6 +110,23 @@ namespace MyNodeTest
             bool result = myLinkedList.head.Equals(myFirstNode) &&
                     myLinkedList.tail.Equals(mySecondNode);
             Assert.AreEqual(result,true);
+        }
+        /// <summary>
+        ///  Search the given Node
+        /// </summary>
+        [Test]
+    public void Given3ElementCheckPerticularElementPresentOrNot()
+        {
+            MyNode<int> firstNode = new MyNode<int>(56);
+            MyNode<int> secondNode = new MyNode<int>(30);
+            MyNode<int> thirdNode = new MyNode<int>(70);
+            MyLinkedList myLinkedList = new MyLinkedList();
+            myLinkedList.append((INode<int>)firstNode);
+            myLinkedList.append((INode<int>)secondNode);
+            myLinkedList.append((INode<int>)thirdNode);
+            bool result = myLinkedList.searchNode((INode<int>)secondNode);
+            Assert.AreEqual(true, result);
+
         }
     }
 }

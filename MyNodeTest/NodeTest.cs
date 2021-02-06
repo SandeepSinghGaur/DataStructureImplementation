@@ -37,7 +37,26 @@ namespace MyNodeTest
             myLinkedList.Add((INode<int>)myThirdNode);
             bool result = myLinkedList.head.Equals(myThirdNode) && myLinkedList.head.GetNext().Equals(MySecondNode) && myLinkedList.tail.Equals(myFirstNode);
             Assert.AreEqual(result, true);
-
+        }
+        ///<summary>
+        ///Ability to create Linked List by appending 30 and 70 to 56
+        ///Node with data 56 is First Created
+-       ///Next Append 30 to 56
+-       /// Finally Append 70 to 30
+-       ///LinkedList Sequence: 56->30->70
+        ///</summary>
+        [Test]
+    public void given3NumbersWhenAppendedToLinkedListShouldAddedToLast()
+        {
+            MyNode<int> myFirstNode = new MyNode<int>(56);
+            MyNode<int> mySecondNode = new MyNode<int>(30);
+            MyNode<int> myThirdNode = new MyNode<int>(70);
+            MyLinkedList myLinkedList = new MyLinkedList();
+            myLinkedList.Add((INode<int>)myFirstNode);
+            myLinkedList.append((INode<int>)mySecondNode);
+            myLinkedList.append((INode<int>)myThirdNode);
+            bool result = myLinkedList.head.Equals(myFirstNode) && myLinkedList.head.GetNext().Equals(mySecondNode) && myLinkedList.tail.Equals(myThirdNode);
+            Assert.AreEqual(result,false);
 
         }
     }

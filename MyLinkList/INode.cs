@@ -14,6 +14,6 @@ namespace MyLinkList
         void SetKey(K key);
         INode<K> GetNext();
         void setNext(INode<K> next);
-
+        void SetNext(INode<int> myNode);
     }
 }

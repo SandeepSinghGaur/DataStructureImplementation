@@ -7,33 +7,49 @@ namespace MyLinkList
     /// <summary>
     /// Implement Add Method inside the class
     /// </summary>
-        public class MyLinkedList
+    public class MyLinkedList
+    {
+        public INode<int> head;
+        public INode<int> tail;
+
+        public MyLinkedList()
         {
-            public INode<int> head;
-            public INode<int> tail;
+            this.head = null;
+            this.tail = null;
+        }
 
-            public MyLinkedList()
+        public void Add(INode<int> node)
+        {
+            if (this.tail == null)
             {
-                this.head = null;
-                this.tail = null;
+                this.tail = node;
             }
-
-            public void Add(INode<int> node)
+            if (this.head == null)
             {
-                if (this.tail == null)
-                {
-                    this.tail = node;
-                }
-                if (this.head == null)
-                {
-                    this.head = node;
-                }
-                else
-                {
-                    INode<int> tempNode = this.head;
-                    this.head = node;
-                    this.head.setNext(tempNode);
-                }
+                this.head = node;
+            }
+            else
+            {
+                INode<int> tempNode = this.head;
+                this.head = node;
+                this.head.setNext(tempNode);
             }
         }
+        public void append(INode<int> myNode)
+        {
+            if (this.head == null)
+            {
+                this.head = myNode;
+            }
+            if (this.tail == null)
+            {
+                this.tail = myNode;
+            }
+            else
+            {
+                this.tail.SetNext(myNode);
+                this.tail = myNode;
+            }
+        }
+    }
 }

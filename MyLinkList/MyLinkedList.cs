@@ -51,5 +51,12 @@ namespace MyLinkList
                 this.tail = myNode;
             }
         }
+        public void insert(INode<int> myNode, INode<int> newNode)
+        {
+            INode<int> tempNode = myNode.GetNext();
+            myNode.setNext(newNode);
+            newNode.setNext(tempNode);
+
+        }
     }
 }

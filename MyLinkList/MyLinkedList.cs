@@ -17,6 +17,10 @@ namespace MyLinkList
             this.head = null;
             this.tail = null;
         }
+        /// <summary>
+        /// Implement Add Method
+        /// </summary>
+        /// <param name="node"></param>
 
         public void Add(INode<int> node)
         {
@@ -35,6 +39,10 @@ namespace MyLinkList
                 this.head.setNext(tempNode);
             }
         }
+        /// <summary>
+        /// Implement Append Method
+        /// </summary>
+        /// <param name="myNode"></param>
         public void append(INode<int> myNode)
         {
             if (this.head == null)
@@ -51,6 +59,11 @@ namespace MyLinkList
                 this.tail = myNode;
             }
         }
+        /// <summary>
+        /// Implement Insert Method
+        /// </summary>
+        /// <param name="myNode"></param>
+        /// <param name="newNode"></param>
         public void insert(INode<int> myNode, INode<int> newNode)
         {
             INode<int> tempNode = myNode.GetNext();
@@ -58,10 +71,28 @@ namespace MyLinkList
             newNode.setNext(tempNode);
 
         }
+        /// <summary>
+        /// Implement Pop First Element Method
+        /// </summary>
         public void pop()
         {
             INode<int> tempNode = this.head;
             this.head = head.GetNext();
+        }
+        /// <summary>
+        /// Implement Pop Last Element Method
+        /// </summary>
+        /// <returns></returns>
+        public INode<int> popLast()
+        {
+            INode<int> tempNode = head;
+            while (!tempNode.GetNext().Equals(tail))
+            {
+                tempNode = tempNode.GetNext();
+            }
+            this.tail = tempNode;
+            tempNode = tempNode.GetNext();
+            return tempNode;
         }
     }
 }

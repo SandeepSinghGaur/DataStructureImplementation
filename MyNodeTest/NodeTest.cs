@@ -92,5 +92,24 @@ namespace MyNodeTest
                     myLinkedList.tail.Equals(myThirdNode);
             Assert.AreEqual(result,result);
         }
+        /// <summary>
+        /// Ability to delete the last  element in the LinkedList of sequence 56->30->70
+        /// </summary>
+        [Test]
+    public void givenLastElementWhenDeletedShouldPassLinkedListResult()
+        {
+            MyNode<int> myFirstNode = new MyNode<int>(56);
+            MyNode<int> mySecondNode = new MyNode<int>(30);
+            MyNode<int> myThirdNode = new MyNode<int>(70);
+            MyLinkedList myLinkedList = new MyLinkedList();
+            myLinkedList.append((INode<int>)myFirstNode);
+            myLinkedList.append((INode<int>)mySecondNode);
+            myLinkedList.append((INode<int>)myThirdNode);
+            myLinkedList.popLast();
+
+            bool result = myLinkedList.head.Equals(myFirstNode) &&
+                    myLinkedList.tail.Equals(mySecondNode);
+            Assert.AreEqual(result,true);
+        }
     }
 }
